@@ -5,11 +5,6 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     
     $('.parallax').parallax();
-    
-    $("#articlesUL").ready(function() {
-      document.getElementById("articlesUL").style.display = "block";
-      document.getElementById("progressBar").style.display = "none";
-    });
   
     $('.add-comment-button').on('click', function(){   
       var articleId = $(this).data("id");
@@ -26,7 +21,7 @@ $(document).ready(function(){
         M.toast({html: 'Comment submitted!'})
         setTimeout(function() {
           location.reload();
-        }, 1000);
+        }, 600);
       });
       return false;
     });
@@ -40,7 +35,10 @@ $(document).ready(function(){
         type: 'POST',
       })
       .done(function() {
-        location.reload();
+        M.toast({html: 'Comment deleted!'})
+        setTimeout(function() {
+          location.reload();
+        }, 600);
       });
       return false;
     });
