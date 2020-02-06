@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cheerio = require("cheerio");
 const logger = require("morgan");
 const axios = require("axios");
+require("dotenv").config();
 
 //Initialize Express
 const app = express();
@@ -15,14 +16,10 @@ app.use(express.static("public"));
 //MongoDB
 var databaseUri = "mongodb://localhost/scraper"
 if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI, {
-    useMongoClient: true
-  });
+  mongoose.connect(process.env.MONGODB_URI);
 }
 else {
-  mongoose.connect(databaseUri, {
-    useMongoClient: true
-  });
+  mongoose.connect(databaseUri);
 }
 
 const db = mongoose.connection;
