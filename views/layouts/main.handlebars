@@ -1,12 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>test</h1>
-</body>
+<html>
+  <head>
+    <title>Raspa El Platano</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+  
+    <div class="navbar-fixed amber darken-3">
+      <nav class="amber darken-3">
+        <div class="nav-wrapper amber darken-3">
+          <a href="/"> <span class="center flow-text">🍌 R A S P A &nbsp;&nbsp;&nbsp;E L&nbsp;&nbsp;&nbsp;  P L A T A N O </span></a>
+          <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="http://www.theplantain.com/" target="_new">The Plantain</a></li>
+            <li><a href="https://github.com/bessygmartinez/RaspaElPlatano" target="_new">Github Repo</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <ul class="sidenav darken-3" id="mobile-demo">
+      <li><a href="http://www.theplantain.com/" target="_new">The Plantain</a></li>
+      <li><a href="https://github.com/tomtom28/mongodb-web-scraper" target="_new">Github Repo</a></li>
+    </ul>
+
+    <main>
+<div class="parallax-container" style="height: 350px; position:relative;">
+      <div class="parallax"><img src="/assets/img/miami.jpg"></div>
+    
+    <div style="position:absolute; margin-top:50px;">
+      <img class="responsive-img" src="/assets/img/platano_scrape.png">
+    </div></div>
+
+      <div class="container">
+        <ul class="collection with-header collapsible">
+          <li class="collection-header cyan darken-2" style="color: white;">
+            <div class="collapsible-header cyan darken-2"><h6><b>How to use Raspa El Platano</b><i class="material-icons">expand_more</i></h6></div>
+          <div class="collapsible-body black-text">
+            <div class="collection-item">
+            <div>Click 🍌 in the navbar to scrape for new articles.</div>
+          </div>
+          <div class="collection-item">
+            <div>Click <i class="material-icons">zoom_in</i> to view an article.</div>
+          </div>
+          <div class="collection-item">
+            <div>Click <i class="material-icons">insert_comment</i> to add a comment.</div>
+          </div>
+          <div class="collection-item">
+            <div>Click <i class="material-icons">short_text</i> to read comments.</div>
+          </div></div>
+        </ul>
+      </div>
+
+      <div class="container">
+        {{{body}}}
+      </div>
+    </main>
+
+    <footer class="page-footer cyan darken-2">
+      <div class="footer-copyright">
+        <div class="container">
+        © All content scraped from 
+        <a class="blue-text text-lighten-4" href="https://theplantain.com/">www.theplantain.com</a>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+  </body>
+
 </html>
