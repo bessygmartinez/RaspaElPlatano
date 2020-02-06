@@ -1,12 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TEST!</title>
-</head>
-<body>
-    <h1>test</h1>>
-</body>
-</html>
+<div class="progress" id="progressBar">
+      <div class="indeterminate"></div>
+  </div>
+<div id="articlesUL">
+{{#each articles}}
+  <ul class="collapsible popout">
+
+    <!-- Article Drop Down -->
+    <li>
+      <div style="background-color: white;" class="collapsible-header cyan darken-1 z-depth-4">
+        <i class="material-icons">zoom_in</i>
+        <div style="color: white;"><h5><b>{{title}}</b></h5></div>
+      </div>
+      <div class="collapsible-body" style="background-color: white;">
+        <p><b class="cyan-text text-darken-5" style="margin-right: 20px;">Scraped: {{updated}}</b>
+          <br>
+          {{summary}}
+
+          <br><br>
+
+          <i>You can read the full article <a href="{{link}}" target="_new">here</a>.</i>
+        </p>
+          
+      </div>
+    </li>
+
+    <!-- Add Comments Drop Down -->
+    <li>
+      <div class="collapsible-header" style="background-color: white;"><i class="material-icons">insert_comment</i>Add a Comment</div>
+      <div class="collapsible-body cyan lighten-5" >
+
+        <form id="form-add-{{_id}}" action="add/comment/{{_id}}" method="post" style="background-color: white;">
+
+          <!-- Author Name Input -->
+          <div class="row">
+            <div class="input-field col s2"></div>
+            <div class="input-field col s8">
+              <input id="author_name_{{_id}}" name="name" type="text" class="validate">
+              <label for="author_name">Your Name:</label>
+            </div>
+          </div>
+          
+          <!-- Comment Input -->
+          <div class="row">
+            <div class="input-field col s2"></div>
+            <div class="input-field col s8">
+              <textarea id="comment_box_{{_id}}" name="comment" class="materialize-textarea"></textarea>
+              <label for="comment_box">Your Reaction:</label>
+            </div>
+          </div>
+
+            <!-- Submit Button -->
+            <div class="row">
+              <div class="input-field col s2"></div>
+              <div class="input-field col s8">
+              <center><button class="btn add-comment-button cyan darken-1 waves-effect" data-id="{{_id}}" type="submit" value="Submit">SUBMIT</button></center>
+              </div>
+            </div>
+          
+        </form>
+
+      </div>
+    </li>
+
+    <!-- View Comments Drop Down -->
+    <li>
+      <div class="collapsible-header" style="background-color: white;"><i class="material-icons">short_text</i>View Comments</div>
+      <div class="collapsible-body cyan lighten-5">
+      
+        {{#if comments}}
+
+          <ul class="collection">
+            {{#each comments}}            
+              <li class="collection-item">
+                <b>{{author}}</b> 
+                <span class="badge">
+                  <form id="form-delete-{{_id}}" action="remove/comment/{{_id}}" method="post">
+                    <button class="red darken-3 btn-small delete-comment-button waves-effect waves-red" data-id="{{_id}}" type="submit" value="Delete">DELETE</button>
+                  </form>
+                </span>
+
+                <br>
+
+                {{content}}
+              </li> 
+            {{/each}}
+          </ul>
+
+        {{else}}
+           <div class="collapsible-header" style="background-color: white;"><p>Nothing here yet!</p></div>
+        {{/if}}
+      </div>
+    </li>
+  </ul>
+{{/each}}
+</div>
