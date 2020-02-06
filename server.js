@@ -13,7 +13,17 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //MongoDB
-mongoose.connect("mongodb://localhost/scraper", { useNewUrlParser: true });
+var databaseUri = "mongodb://localhost/scraper"
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI, {
+    useMongoClient: true
+  });
+}
+else {
+  mongoose.connect(databaseUri, {
+    useMongoClient: true
+  });
+}
 
 const db = mongoose.connection;
 db.on("err", function(err) {
