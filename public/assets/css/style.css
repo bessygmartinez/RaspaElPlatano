@@ -2,6 +2,9 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-#articlesUL {
-    display: none;
+#toast-container {
+    min-width: 10%;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(50%);
 }
