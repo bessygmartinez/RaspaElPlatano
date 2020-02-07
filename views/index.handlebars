@@ -39,7 +39,7 @@
             <div class="input-field col s2"></div>
             <div class="input-field col s8">
               <textarea id="comment_box_{{_id}}" name="comment" class="materialize-textarea"></textarea>
-              <label for="comment_box">Your Reaction:</label>
+              <label for="comment_box">What do you want to say?</label>
             </div>
           </div>
 
@@ -67,21 +67,18 @@
             {{#each comments}}            
               <li class="collection-item">
                 <b>{{author}}</b> 
-                <span class="badge">
-                  <form id="form-delete-{{_id}}" action="remove/comment/{{_id}}" method="post">
-                    <button class="red darken-3 btn-small delete-comment-button waves-effect waves-red" data-id="{{_id}}" type="submit" value="Delete">DELETE</button>
-                  </form>
-                </span>
-
-                <br>
-
+                {{!-- <span class="badge"> --}}
+                  <form id="form-delete-{{_id}}" action="remove/comment/{{_id}}" method="post">               
+                {{!-- </span> --}}
                 {{content}}
-              </li> 
+                <br>
+                <button class="red darken-3 btn-small delete-comment-button waves-effect waves-red" data-id="{{_id}}" type="submit" value="Delete">DELETE COMMENT</button>
+              </li> </form>
             {{/each}}
           </ul>
 
         {{else}}
-           <div class="collapsible-header" style="background-color: white;"><p>Nothing here yet!</p></div>
+           <div class="collapsible-header" style="background-color: white;"><p>No comments yet. Click on "Add a Comment" above to add yours!</p></div>
         {{/if}}
       </div>
     </li>
