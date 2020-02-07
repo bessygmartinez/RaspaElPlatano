@@ -5,6 +5,8 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     
     $('.parallax').parallax();
+
+    $('.modal').modal();
   
     $('.add-comment-button').on('click', function(){   
       var articleId = $(this).data("id");
