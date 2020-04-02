@@ -6,7 +6,7 @@
 
 Raspa El Platano (which in English translates to "Scrape the Plantain") is a web scraper application that takes the latest articles posted by [The Plantain](http://www.theplantain.com). The Plantain is a satirical (meaning fake) publication that is based on Miami-centric topics.
 
-The app makes use of html templates with the help from Express Handlebars. The Model–View–Controller (MVC) pattern is used for the structure of the file setup and script content. An Object-Relational Mapping (ORM) technique is used to tie the database usage and conroller script to manage the routing.
+The app makes use of html templates with the help from Express Handlebars. The Model–View–Controller (MVC) pattern is used for the structure of the file setup and script content. An Object-Relational Mapping (ORM) technique is used to tie the database usage and controller script to manage the routing.
 
 ## SCREENSHOT
 ![alt text](https://raw.githubusercontent.com/bessygmartinez/RaspaElPlatano/master/public/assets/img/raspa_screenshot.jpg "Raspa El Platano Screenshot")
